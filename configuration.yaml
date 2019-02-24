@@ -1,0 +1,33 @@
+homeassistant: !include Statisch/homeassistant.yaml
+device_tracker: !include Statisch/device_tracker.yaml
+climate: !include Statisch/climate.yaml
+media_player: !include Statisch/media_players.yaml
+cast: !include Statisch/cast.yaml
+http: !include Statisch/http.yaml
+cloud: !include Statisch/google.yaml
+frontend: !include Statisch/frontend.yaml
+mqtt: !include Statisch/mqtt.yaml
+binary_sensor: !include_dir_list Binaire Sensor
+input_number: !include Input/input_number.yaml
+input_boolean: !include Input/input_boolean.yaml
+input_select: !include Input/input_select.yaml
+automation: !include_dir_list Automatiseringen
+script: !include_dir_merge_named Scripts
+sensor: !include sensors.yaml
+group: !include groups.yaml
+switch: !include switches.yaml
+light: !include lights.yaml
+scene: !include_dir_list Scenes
+notify: 
+  - platform: webostv
+    host: 10.10.10.99
+    name: LG
+    filename: webostv.conf
+config:
+history:
+recorder:
+logbook:
+logger:
+  default: error
+  logs:
+    homeassistant.components.mqtt: debug

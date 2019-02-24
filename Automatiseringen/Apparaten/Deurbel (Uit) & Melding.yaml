@@ -1,0 +1,30 @@
+alias: "Deurbel Uit Melding"
+initial_state: on
+trigger:
+  platform: state
+  entity_id: switch.deurbel_sensor
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+  - condition: state
+    entity_id: switch.deurbel
+    state: 'off'
+action:
+  - service: notify.lg
+    data:
+      message: "Er staat iemand aan de deur (ding-dong)!"
+  - service: light.toggle
+    entity_id: group.woonkamer_verlichting
+  - delay:
+      milliseconds: 250
+  - service: light.toggle
+    entity_id: group.woonkamer_verlichting
+  - delay:
+      milliseconds: 250
+  - service: light.toggle
+    entity_id: group.woonkamer_verlichting
+  - delay:
+      milliseconds: 250
+  - service: light.toggle
+    entity_id: group.woonkamer_verlichting

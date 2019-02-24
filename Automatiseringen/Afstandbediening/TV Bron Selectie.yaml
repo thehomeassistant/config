@@ -1,0 +1,8 @@
+alias: "TV - Bron Selectie"
+trigger:
+  platform: state
+  entity_id: switch.tv_bron
+  to: "on"
+action:
+  service: switch.turn_off
+  entity_id: switch.tv_bron

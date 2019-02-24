@@ -1,0 +1,8 @@
+alias: "Keukenverlichting Uit"
+trigger:
+  platform: state
+  entity_id: light.lamp_keuken
+  to: 'off'
+action:
+  service: light.turn_off
+  entity_id: light.keukenblad

@@ -1,0 +1,44 @@
+- platform: mqtt
+  state_topic: 'tele/buitensensor/SENSOR'
+  name: "Buiten Temperatuur"
+  unit_of_measurement: 'C'
+  value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
+
+- platform: mqtt
+  state_topic: 'tele/buitensensor/SENSOR'
+  name: "Buiten Licht"
+  unit_of_measurement: 'Lux'
+  value_template: '{{ value_json["BH1750"]["Illuminance"] }}'
+
+- platform: mqtt
+  name: 'IR Ontvanger'
+  state_topic: tele/irreceiver/RESULT
+  value_template: '{{ value_json["IrReceived"]["Data"] }}'
+  expire_after: '1'
+
+- platform: dsmr
+  host: 10.10.10.230
+  port: 8088
+
+- platform: template
+  sensors:
+    energietarief:
+      friendly_name: "Huidig Tarief"
+      unit_of_measurement: KW/h
+      value_template: >-
+        {% if is_state('sensor.power_tariff', 'normal') %}
+          €0,254
+        {% else %}
+          €0,234
+        {% endif %}
+    verbruikdagtariefeuro:
+      friendly_name: "Verbruik Dagtarief in Euro's"
+      value_template: "{{ states('sensor.power_consumption_normal')|multiply(0.25434)|round(2)}}"
+    verbruikdaltariefeuro:
+      friendly_name: "Verbruik Daltarief in Euro's"
+      value_template: "{{ states('sensor.power_consumption_low')|multiply(0.23468)|round(2)}}"
+    totaalverbruik:
+      friendly_name: "Totaal Verbruik"
+      unit_of_measurement: 'Euro'
+      value_template: "{{ states('sensor.verbruikdaltariefeuro')| float | round(2) + states('sensor.verbruikdagtariefeuro')| float 
+| round(2) }}"

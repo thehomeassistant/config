@@ -1,0 +1,5 @@
+broker: 10.10.10.20
+port: 1883
+client_id: HomeAssistantCore
+discovery: true
+discovery_prefix: homeassistant

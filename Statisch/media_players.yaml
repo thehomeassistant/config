@@ -1,0 +1,4 @@
+platform: webostv
+host: 10.10.10.99
+name: LG TV
+filename: webostv.conf

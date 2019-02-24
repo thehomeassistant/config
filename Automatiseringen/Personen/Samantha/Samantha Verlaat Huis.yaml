@@ -1,0 +1,17 @@
+alias: "Samantha Verlaat Huis"
+trigger:
+  platform: state
+  entity_id:
+    - device_tracker.huawei_p2014e5c7bfdcef11
+  to: "not_home"
+condition:
+  condition: state
+  entity_id: device_tracker.huawei_p205d2e2474c3d0ec
+  state: 'not_home'
+action:
+  - service: light.turn_off
+    entity_id: group.woonkamer
+  - service: switch.turn_off
+    entity_id: switch.tv_aan_uit
+  - service: light.turn_off
+    entity_id: light.binnenkomst_lamp

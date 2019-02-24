@@ -1,0 +1,37 @@
+google_actions:
+    filter:
+      include_entities:
+        - climate.aquarium_temperatuur
+        - light.aquarium
+        - light.eettael
+        - light.salontafel
+        - light.lamp_keuken
+        - light.lamp_slaapkamer
+        - light.nachtkastje_jeffrey
+        - light.nachtkastje_samantha
+        - light.nachtlampje_jayden
+        - light.schilderij_led
+        - light.kerstverlichting
+        - sensor.aquarium_temperatuur
+        - sensor.buiten_temperatuur
+        - switch.deurbel
+        - switch.stereo_harder
+        - switch.stereo_zachter
+        - switch.tv_aan_uit
+      exclude_domains:
+        - switch
+        - group
+        - zone
+        - automation
+        - script
+        - binary_sensor
+        - input_boolean
+        - fan
+        - camera
+      exclude_entities:
+        - climate.aquarium_ventilator
+        - climate.aquarium_verwarming
+        - media_player.woonkamer
+      
+        
+        

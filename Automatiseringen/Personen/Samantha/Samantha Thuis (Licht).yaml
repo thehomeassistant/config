@@ -1,0 +1,15 @@
+alias: "Samantha - Thuiskomst Licht"
+trigger:
+  platform: state
+  entity_id: device_tracker.huawei_p2014e5c7bfdcef11
+  to: "home"
+condition:
+  condition: state
+  entity_id: binary_sensor.lux_laag
+  state: "on"
+action:
+  service: light.turn_on
+  entity_id: 
+    - light.salontafel
+    - light.eettafel
+    - light.binnenkomst_lamp

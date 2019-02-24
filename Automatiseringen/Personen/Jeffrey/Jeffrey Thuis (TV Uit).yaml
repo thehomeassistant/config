@@ -1,0 +1,19 @@
+alias: "Jeffrey - Thuiskomst TV (Uit)"
+trigger:
+  platform: state
+  entity_id: device_tracker.huawei_p205d2e2474c3d0ec
+  to: "home"
+condition:
+  condition: and
+  conditions:
+  - condition: state
+    entity_id: switch.tv_aan_uit
+    state: 'off'
+action:
+  - delay: '00:00:10'
+  - service: switch.turn_on
+    entity_id: 
+      - switch.setopbox_6
+  - service: switch.turn_on
+    entity_id: 
+      - switch.setopbox_1

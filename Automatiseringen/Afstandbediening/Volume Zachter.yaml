@@ -1,0 +1,8 @@
+alias: "RF - Volume Zachter"
+trigger:
+  platform: state
+  entity_id: switch.stereo_zachter
+  to: "on"
+action:
+  service: switch.turn_off
+  entity_id: switch.stereo_zachter

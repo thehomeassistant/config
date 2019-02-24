@@ -1,0 +1,6 @@
+nep_sensor:
+  name: Nep sensor
+  icon: mdi:toggle-switch-off
+  initial: off
+
+

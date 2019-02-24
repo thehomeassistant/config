@@ -1,0 +1,273 @@
+
+# Keuken Lamp
+
+- platform: mqtt
+  name: "Lamp Keuken"
+  state_topic: "stat/lampkeuken/POWER"
+  command_topic: "cmnd/lampkeuken/POWER"
+  availability_topic: "tele/lampkeuken/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+
+# Slaapkamer Lamp
+
+- platform: mqtt
+  name: "Lamp Slaapkamer"
+  state_topic: "stat/slaapkamer/POWER"
+  command_topic: "cmnd/slaapkamer/POWER"
+  availability_topic: "tele/slaapkamer/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+
+# -----------------------------------------------
+
+# Nachtkastje Samantha
+
+- platform: mqtt
+  name: "Nachtkastje Samantha"
+  state_topic: "stat/nachtkastsam/POWER"
+  command_topic: "cmnd/nachtkastsam/POWER"
+  availability_topic: "tele/nachtkastsam/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+
+# -----------------------------------------------
+
+
+# Nachtkastje Jeffrey
+
+- platform: mqtt
+  name: "Nachtkastje Jeffrey"
+  state_topic: "stat/nachtkastjef/POWER"
+  command_topic: "cmnd/nachtkastjef/POWER"
+  availability_topic: "tele/nachtkastjef/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+
+# -----------------------------------------------
+- platform: mqtt
+  name: "Nachtlampje Jayden"
+  state_topic: "stat/jaydennachtlampje/POWER"
+  command_topic: "cmnd/jaydennachtlampje/POWER"
+  availability_topic: "tele/jaydennachtlampje/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+
+# -----------------------------------------------
+
+# -----------------------------------------------
+
+- platform: mqtt
+  name: "Salontafel"
+  state_topic: "stat/salontafel/POWER"
+  state_value_template: "{{ value }}"
+  command_topic: "cmnd/salontafel/POWER"
+  brightness_state_topic: "stat/salontafel/DIMMER"
+  brightness_command_topic: "cmnd/salontafel/Dimmer"
+  brightness_value_template: "{{ value_json.Dimmer }}"
+  brightness_scale: 100
+  rgb_state_topic: "stat/salontafel/COLOR"
+  rgb_command_topic: "cmnd/salontafel/Color"
+  rgb_command_template: "{{ '%02x%02x%02x0000' | format(red, green, blue) }}"
+  rgb_value_template: "{{ value_json.Color[0:2]|int(base=16) }},{{ value_json.Color[2:4]|int(base=16) }},{{ value_json.Color[4:6]|int(base=16) }}"
+  color_temp_state_topic: "stat/salontafel/CT"
+  color_temp_command_topic: "cmnd/salontafel/CT"
+  color_temp_value_template: "{{ value_json.CT }}"
+  effect_state_topic: "stat/salontafel/SCHEME"
+  effect_command_topic: "cmnd/salontafel/Scheme"
+  effect_value_template: "{{ value_json.Scheme }}"
+  effect_list:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+  availability_topic: "tele/salontafel/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  retain: false
+
+# -----------------------------------------------
+
+# -----------------------------------------------
+
+- platform: mqtt
+  name: "Eettafel"
+  state_topic: "stat/eettafel/POWER"
+  state_value_template: "{{ value }}"
+  command_topic: "cmnd/eettafel/POWER"
+  brightness_state_topic: "stat/eettafel/DIMMER"
+  brightness_command_topic: "cmnd/eettafel/Dimmer"
+  brightness_value_template: "{{ value_json.Dimmer }}"
+  brightness_scale: 100
+  rgb_state_topic: "stat/eettafel/COLOR"
+  rgb_command_topic: "cmnd/eettafel/Color"
+  rgb_command_template: "{{ '%02x%02x%02x0000' | format(red, green, blue) }}"
+  rgb_value_template: "{{ value_json.Color[0:2]|int(base=16) }},{{ value_json.Color[2:4]|int(base=16) }},{{ value_json.Color[4:6]|int(base=16) }}"
+  color_temp_state_topic: "stat/eettafel/CT"
+  color_temp_command_topic: "cmnd/eettafel/CT"
+  color_temp_value_template: "{{ value_json.CT }}"
+  effect_state_topic: "stat/eettafel/SCHEME"
+  effect_command_topic: "cmnd/eettafel/Scheme"
+  effect_value_template: "{{ value_json.Scheme }}"
+  effect_list:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+  availability_topic: "tele/eettafel/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  retain: false
+  
+# -----------------------------------------------
+
+# -----------------------------------------------
+
+- platform: mqtt
+  name: "Jayden LED"
+  state_topic: "stat/jaydenled/POWER"
+  state_value_template: "{{ value }}"
+  command_topic: "cmnd/jaydenled/POWER"
+  brightness_state_topic: "stat/jaydenled/DIMMER"
+  brightness_command_topic: "cmnd/jaydenled/Dimmer"
+  brightness_value_template: "{{ value_json.Dimmer }}"
+  brightness_scale: 100
+  rgb_state_topic: "stat/jaydenled/COLOR"
+  rgb_command_topic: "cmnd/jaydenled/Color"
+  rgb_command_template: "{{ '%02x%02x%02x0000' | format(green, red, blue) }}"
+  rgb_value_template: "{{ value_json.Color[0:2]|int(base=16) }},{{ value_json.Color[2:4]|int(base=16) }},{{ value_json.Color[4:6]|int(base=16) }}"
+  effect_state_topic: "stat/jaydenled/SCHEME"
+  effect_command_topic: "cmnd/jaydenled/Scheme"
+  effect_value_template: "{{ value_json.Scheme }}"
+  effect_list:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+  availability_topic: "tele/jaydenled/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  retain: false
+  
+# -----------------------------------------------
+
+# -----------------------------------------------
+
+- platform: mqtt
+  name: "Schilderij LED"
+  state_topic: "stat/schilderijled/POWER"
+  state_value_template: "{{ value }}"
+  command_topic: "cmnd/schilderijled/POWER"
+  brightness_state_topic: "stat/schilderijled/DIMMER"
+  brightness_command_topic: "cmnd/schilderijled/Dimmer"
+  brightness_value_template: "{{ value_json.Dimmer }}"
+  brightness_scale: 100
+  rgb_state_topic: "stat/schilderijled/COLOR"
+  rgb_command_topic: "cmnd/schilderijled/Color"
+  rgb_command_template: "{{ '%02x%02x%02x0000' | format(green, red, blue) }}"
+  rgb_value_template: "{{ value_json.Color[0:2]|int(base=16) }},{{ value_json.Color[2:4]|int(base=16) }},{{ value_json.Color[4:6]|int(base=16) }}"
+  effect_state_topic: "stat/schilderijled/SCHEME"
+  effect_command_topic: "cmnd/schilderijled/Scheme"
+  effect_value_template: "{{ value_json.Scheme }}"
+  effect_list:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+  availability_topic: "tele/jaydenled/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  retain: false
+  
+# -----------------------------------------------
+
+# -----------------------------------------------
+
+# Keuken Lamp
+
+- platform: mqtt
+  name: "Dylena Plafond"
+  state_topic: "stat/dylenaplafondv2/POWER"
+  command_topic: "cmnd/dylenaplafondv2/POWER"
+  availability_topic: "tele/dylenaplafondv2/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+  
+# -----------------------------------------------
+
+# -----------------------------------------------
+
+#  Binnenkomst lamp
+
+- platform: mqtt
+  name: "Binnenkomst Lamp"
+  state_topic: "stat/binnenkomstlamp/POWER"
+  command_topic: "cmnd/binnenkomstlamp/POWER"
+  availability_topic: "tele/binnenkomstlamp/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+  
+- platform: mqtt
+  name: "Jayden Plafond"
+  state_topic: "stat/jaydenplafond/POWER"
+  command_topic: "cmnd/jaydenplafond/POWER"
+  availability_topic: "tele/jaydenplafond/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+
+- platform: flux_led
+  devices:
+    10.10.10.6:
+      name: Keukenblad

@@ -1,0 +1,98 @@
+default_view:
+  name: Home
+  view: yes
+  entities:
+    - media_player.lg_tv
+    - group.tv
+    - group.gang
+keuken:
+  name: Keuken
+  view: yes
+  entities:
+  - light.lamp_keuken
+  - light.keukenblad
+    
+woonkamer:
+  name: Woonkamer
+  view: yes
+  entities:
+  - light.eettafel
+  - light.salontafel
+  - light.schilderij_led
+  - media_player.lg_tv
+  - switch.multimedia
+Slaapkamer:
+  name: Slaapkamer
+  view: yes
+  entities:
+    - light.lamp_slaapkamer
+    - light.nachtkastje_samantha
+    - light.nachtkastje_jeffrey
+    - sensor.slaapkamer_temperatuur
+    - sensor.slaapkamer_luchtvochtigheid
+    - sensor.slaapkamer_batterij
+
+Jayden:
+  name: Jayden
+  view: yes
+  entities:
+    - light.jayden_plafond
+    - light.nachtlampje_jayden
+    - light.jayden_led
+    - sensor.slaapkamer_jayden_temperatuur
+    - sensor.slaapkamer_jayden_luchtvochtigheid
+    - sensor.slaapkamer_jayden_batterij
+    - camera.slaapkamer_jayden    
+Dylena:
+  name: Dylena
+  view: yes
+  entities:
+    - light.dylena_plafond
+ 
+woonkamer_verlichting:
+  name: Woonkamer Verlichting
+  entities:
+    - light.salontafel
+    - light.eettafel
+    - light.schilderij_led
+
+
+zones:
+  name: Zones
+  entities:
+    - binary_sensor.floorplan
+
+mensen:
+  name: Mensen
+  entities:
+    - device_tracker.huawei_p2014e5c7bfdcef11
+    - device_tracker.huawei_p2014e5c7bfdcef11
+
+tv:
+  name: TV
+  entities:
+    - media_player.lg_tv
+    - switch.stereo_harder
+    - switch.stereo_zachter
+
+gang:
+  name: Gang
+  entities:
+    - switch.deurbel
+    - light.binnenkomst_lamp
+
+meterkast:
+  name: 'Stroomverbruik'
+  entities:
+  - sensor.power_consumption
+  - sensor.power_consumption_normal
+  - sensor.verbruikdagtariefeuro
+  - sensor.power_consumption_low
+  - sensor.verbruikdaltariefeuro
+  - sensor.energietarief
+
+stroomnetwerk:
+  name: 'Stroom & Netwerk'
+  view: yes
+  entities:
+  - group.meterkast

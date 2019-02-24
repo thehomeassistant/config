@@ -1,0 +1,8 @@
+alias: Test
+trigger:
+- entity_id: sensor.ir_ontvanger
+  platform: state
+  to: '2FD807F'
+action:
+  service: light.toggle
+  entity_id: group.woonkamer_verlichting

@@ -1,0 +1,17 @@
+ethereum:
+  refresh: 5
+  name: Overzicht in Ethereum
+  entities:
+  - sensor.balans_betaald
+  - sensor.balans_onbetaald
+  - sensor.wachten_op_bevestiging
+  - sensor.verdiensten_afgelopen_24_uur
+euros:
+  refresh: 5
+  name: Overzicht in Euro's
+  entities:
+  - sensor.balans_betaald_in_euros
+  - sensor.balans_onbetaald_in_euros
+  - sensor.wachten_op_bevestiging_in_euros
+  - sensor.verdiensten_afgelopen_24_uur_in_euros
+

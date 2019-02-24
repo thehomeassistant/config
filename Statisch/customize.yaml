@@ -1,0 +1,64 @@
+switch.stereo_harder:
+  friendly_name: Volume Harder
+  icon: mdi:volume-plus
+  assumed_state: false
+
+switch.stereo_zachter:
+  friendly_name: Volume Zachter
+  icon: mdi:volume-minus
+  assumed_state: false
+
+switch.aquarium_ventilator:
+  friendly_name: Ventilator
+  icon: mdi:fan
+  
+switch.aquarium_verwarming:
+  friendly_name: Verwarming
+  icon: mdi:thermometer
+
+light.aquarium:
+  friendly_name: Verlichting
+  icon: mdi:led-strip
+
+binary_sensor.floorplan:
+  custom_ui_state_card: state-card-floorplan
+  config: !include ../Binaire Sensor/floorplan.yaml
+  
+sensor.ethereum_waarde:
+  icon: mdi:currency-eur
+  
+sensor.hashrate_server_1:
+  icon: mdi:speedometer
+
+sensor.balans_betaald:
+  entity_picture: https://cashforgoldandcoins2.com/wp-content/uploads/parser/ethereum-logo-transparent-1.png
+  
+sensor.balans_onbetaald:
+  entity_picture: https://cashforgoldandcoins2.com/wp-content/uploads/parser/ethereum-logo-transparent-1.png
+  
+sensor.verdiensten_afgelopen_24_uur:
+  entity_picture: https://cashforgoldandcoins2.com/wp-content/uploads/parser/ethereum-logo-transparent-1.png
+  
+sensor.wachten_op_bevestiging:
+  entity_picture: https://cashforgoldandcoins2.com/wp-content/uploads/parser/ethereum-logo-transparent-1.png
+  
+sensor.wachten_op_bevestiging_in_euros:
+  icon: mdi:currency-eur
+
+sensor.verdiensten_afgelopen_24_uur_in_euros:
+  icon: mdi:currency-eur
+  
+sensor.balans_onbetaald_in_euros:
+  icon: mdi:currency-eur
+
+sensor.balans_betaald_in_euros:
+  icon: mdi:currency-eur
+
+sensor.power_consumption:
+  friendly_name: Huidig Stroomverbruik
+
+sensor.power_consumption_low:
+  friendly_name: Verbruik Laagtarief (Totaal)
+
+sensor.power_consumption_normal:
+  friendly_name: Verbruik Dagtarief (Totaal)

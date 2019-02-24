@@ -1,0 +1,16 @@
+alias: "Samantha - Thuiskomst TV (Aan)"
+trigger:
+  platform: state
+  entity_id: device_tracker.huawei_p2014e5c7bfdcef11
+  to: "home"
+condition:
+  - condition: state
+    entity_id: switch.tv_aan_uit
+    state: 'on'
+action:
+  - service: switch.turn_on
+    entity_id: 
+      - switch.setopbox_6
+  - service: switch.turn_on
+    entity_id: 
+      - switch.setopbox_5

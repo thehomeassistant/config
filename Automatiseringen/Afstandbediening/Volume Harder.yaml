@@ -1,0 +1,8 @@
+alias: "RF - Volume Harder"
+trigger:
+  platform: state
+  entity_id: switch.stereo_harder
+  to: "on"
+action:
+  service: switch.turn_off
+  entity_id: switch.stereo_harder

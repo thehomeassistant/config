@@ -1,0 +1,4 @@
+npo2:
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.setopbox_2

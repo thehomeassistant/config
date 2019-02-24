@@ -1,0 +1,8 @@
+alias: "Keukenverlichting Aan"
+trigger:
+  platform: state
+  entity_id: light.lamp_keuken
+  to: 'on'
+action:
+  service: light.turn_on
+  entity_id: light.keukenblad

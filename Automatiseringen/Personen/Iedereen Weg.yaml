@@ -1,0 +1,21 @@
+alias: "Iedereen Weg"
+trigger:
+  platform: state
+  entity_id:
+    - device_tracker.huawei_p2014e5c7bfdcef11
+    - device_tracker.huawei_p205d2e2474c3d0ec
+  to: "not_home"
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: device_tracker.huawei_p2014e5c7bfdcef11
+      state: 'not_home'
+    - condition: state
+      entity_id: device_tracker.huawei_p205d2e2474c3d0ec
+      state: 'not_home'
+action:
+  - service: light.turn_off
+    entity_id: group.woonkamer
+  - service: light.turn_off
+    entity_id: light.binnenkomst_lamp

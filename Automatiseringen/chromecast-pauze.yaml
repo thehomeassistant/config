@@ -1,0 +1,11 @@
+alias: "testtt"
+trigger:
+  platform: state
+  entity_id: media_player.woonkamer
+  to: 'paused'
+action:
+  - service: notify.lg
+    data:
+      message: "Luisteren he kids!"
+
+

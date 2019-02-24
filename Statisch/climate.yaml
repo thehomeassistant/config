@@ -1,0 +1,45 @@
+- platform: generic_thermostat
+  name: Aquarium
+  heater: input_boolean.nep_sensor
+  target_sensor: sensor.aquarium_temperatuur
+  initial_operation_mode: "off"
+  target_temp: 35
+
+- platform: generic_thermostat
+  name: Buiten Temperatuur
+  heater: input_boolean.nep_sensor
+  target_sensor: sensor.buiten_temperatuur
+  initial_operation_mode: "off"
+  target_temp: 24
+
+- platform: generic_thermostat
+  name: "Aquarium Verwarming"
+  heater: switch.aquarium_verwarming
+  target_sensor: sensor.aquarium_temperatuur
+  min_temp: 20
+  max_temp: 50
+  ac_mode: False
+  target_temp: 35
+  cold_tolerance: 0.5
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 1
+  initial_operation_mode: "auto"
+    
+- platform: generic_thermostat
+  name: "Aquarium Ventilator"
+  heater: switch.aquarium_ventilator
+  target_sensor: sensor.aquarium_temperatuur
+  min_temp: 20
+  max_temp: 50
+  ac_mode: True
+  target_temp: 35
+  cold_tolerance: 0
+  hot_tolerance: 0.5
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 1
+  initial_operation_mode: "auto"

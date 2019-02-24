@@ -1,0 +1,6 @@
+viceland:
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.setopbox_2
+    - service: switch.turn_on
+      entity_id: switch.setopbox_6

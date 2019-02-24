@@ -1,0 +1,9 @@
+alias: "Schermerig"
+trigger:
+  platform: state
+  entity_id: binary_sensor.lux_laag
+  to: "on"
+action:
+  service: light.turn_on
+  entity_id: group.woonkamer
+

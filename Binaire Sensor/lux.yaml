@@ -1,0 +1,21 @@
+platform: template
+sensors:
+  lux_laag:
+    friendly_name: "Marge Lage Lichtsterkte"
+    device_class: light
+    value_template: >
+        {% if (states("sensor.buiten_licht") | float) < (states("input_number.lux_laag") | float) %}
+         True
+        {% else %}
+          False
+        {% endif %}
+      
+  lux_hoog:
+    friendly_name: "Marge Hoge Lichtsterkte"
+    device_class: light
+    value_template: >
+        {% if (states("sensor.buiten_licht") | float) > (states("input_number.lux_laag") | float) %}
+         True
+        {% else %}
+          False
+        {% endif %}

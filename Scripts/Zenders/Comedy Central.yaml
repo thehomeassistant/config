@@ -1,0 +1,6 @@
+comedy_central:
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.setopbox_1
+    - service: switch.turn_on
+      entity_id: switch.setopbox_4
