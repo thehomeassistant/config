@@ -1,8 +1,6 @@
 google_actions:
     filter:
       include_entities:
-        - climate.aquarium_temperatuur
-        - light.aquarium
         - light.eettael
         - light.salontafel
         - light.lamp_keuken
@@ -11,9 +9,6 @@ google_actions:
         - light.nachtkastje_samantha
         - light.nachtlampje_jayden
         - light.schilderij_led
-        - light.kerstverlichting
-        - sensor.aquarium_temperatuur
-        - sensor.buiten_temperatuur
         - switch.deurbel
         - switch.stereo_harder
         - switch.stereo_zachter

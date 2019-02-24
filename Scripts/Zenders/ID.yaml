@@ -1,6 +1,0 @@
-id:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.setopbox_6
-    - service: switch.turn_on
-      entity_id: switch.setopbox_5

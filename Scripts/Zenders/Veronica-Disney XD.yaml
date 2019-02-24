@@ -1,4 +1,0 @@
-veronica_disneyxd:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.setopbox_8

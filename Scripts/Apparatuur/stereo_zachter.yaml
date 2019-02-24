@@ -1,5 +1,0 @@
-stereo_zachter:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.stereo_zachter
-
