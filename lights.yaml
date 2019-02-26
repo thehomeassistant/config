@@ -269,5 +269,5 @@
 
 - platform: flux_led
   devices:
-    10.10.10.6:
+    10.10.10.105:
       name: Keukenblad
